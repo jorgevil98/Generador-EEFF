@@ -1,29 +1,11 @@
-# EFicient — sitio informativo
-
-Uso interno de Grant Thornton BPS Costa Rica para atención de clientes. Contacto: auto_bps-rpa@cr.gt.com.
+# EFicient: páginas públicas y retorno de Intuit
 
 Sitio: https://jorgevil98.github.io/Generador-EEFF/
-Servicio privado: https://eficient-qbo.auto-bps-rpa.chatgpt.site
 
-Este repositorio contiene solo las páginas públicas y sus estilos. No contiene el proyecto privado de escritorio, tokens ni datos de empresas.
+La aplicación Java, el intercambio de códigos, los tokens y las bases se ejecutan localmente. GitHub Pages no guarda tokens ni llama a un servicio de ChatGPT.
 
-## Páginas
-- privacy.html: política de privacidad.
-- terms.html: condiciones de uso interno.
-- launch.html: acceso al servicio de conexiones y descripción del escritorio.
-- connect.html: acceso al flujo real de autorización y reconexión.
-- disconnect.html: acceso a la revocación de conexiones.
+connect.html recibe code/state/realmId de Intuit y permite copiar el retorno completo para pegarlo en el diálogo de EFicient y guardar la conexión. No inicia otra autorización. Oculta los parámetros de la barra del navegador después de preparar el campo de copia; no utiliza almacenamiento persistente del navegador ni envía el retorno a un servidor.
 
-## Estado
-Servicio implementado y publicado con autorización OAuth, cifrado de tokens, renovación al consultar, consulta de empresa y BalanceSheet, revocación y acceso por identidad. Configuración inicial Sandbox. Todavía deben configurarse Client ID y Client Secret de Intuit y validarse el flujo con credenciales reales; las pruebas actuales usan un proveedor simulado. La identidad del escritorio y el acceso del equipo requieren integración antes del uso con clientes reales.
+Redirect URI registrado en el entorno de Intuit correspondiente: https://jorgevil98.github.io/Generador-EEFF/connect.html
 
-## Datos para Intuit
-- Host domain del servicio: eficient-qbo.auto-bps-rpa.chatgpt.site
-- Launch: https://eficient-qbo.auto-bps-rpa.chatgpt.site/launch
-- Connect/Reconnect: https://eficient-qbo.auto-bps-rpa.chatgpt.site/connect
-- Disconnect: https://eficient-qbo.auto-bps-rpa.chatgpt.site/disconnect
-- Redirect URI: https://eficient-qbo.auto-bps-rpa.chatgpt.site/oauth/intuit/callback
-- EULA: https://jorgevil98.github.io/Generador-EEFF/terms.html
-- Privacy: https://jorgevil98.github.io/Generador-EEFF/privacy.html
-
-El servicio está restringido a la cuenta propietaria en Sites. No introducir tokens o secretos en el sitio público. No declarar pruebas de producción realizadas hasta efectuarlas. El país de alojamiento administrado debe confirmarse con el proveedor; no deducirlo de la sede de la firma o del DNS. No hay una IP de salida fija configurada.
+launch.html explica cómo abrir el escritorio. disconnect.html explica la desconexión dentro de la aplicación. privacy.html y terms.html contienen las condiciones y privacidad. Este repositorio no incluye bases, secretos ni datos contables.
